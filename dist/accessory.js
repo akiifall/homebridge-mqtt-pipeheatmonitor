@@ -17,7 +17,7 @@ class PipeHeaterMonitor {
         this.mqttPass = config.mqttPass;
         this.topicStatus = config.topicStatus;
         this.topicCommand = config.topicCommand;
-        this.getStatusCommand = config.getStatusCommand;
+        this.statusCommand = config.getStatusCommand;
         this.onValue = config.onValue;
         this.offValue = config.offValue;
         this.informationService = new hap.Service.AccessoryInformation()
@@ -59,7 +59,7 @@ class PipeHeaterMonitor {
         callback(null, this.deviceService.getCharacteristic(this.api.hap.Characteristic.Active).value);
     }
     setActiveHandler(value, callback) {
-        let jsonCommand = this.getStatusCommand;
+        let jsonCommand = this.statusCommand;
         this.mqttClient.publish(this.topicCommand, jsonCommand);
         callback(null);
     }

@@ -43,7 +43,7 @@ class PipeHeaterMonitor implements AccessoryPlugin {
   private serialNumber: string;
   private topicStatus: string;
   private topicCommand: string;
-  private getStatusCommand: string;
+  private statusCommand: string;
   private onValue: string;
   private offValue: string;
 
@@ -60,7 +60,7 @@ class PipeHeaterMonitor implements AccessoryPlugin {
     this.mqttPass = config.mqttPass;
     this.topicStatus = config.topicStatus;
     this.topicCommand = config.topicCommand;
-    this.getStatusCommand = config.getStatusCommand;
+    this.statusCommand = config.getStatusCommand;
     this.onValue = config.onValue;
     this.offValue = config.offValue;
     
@@ -113,7 +113,7 @@ class PipeHeaterMonitor implements AccessoryPlugin {
 	}
 
 	setActiveHandler (value: CharacteristicValue, callback: any) {
-    let jsonCommand: string = this.getStatusCommand;
+    let jsonCommand: string = this.statusCommand;
     this.mqttClient.publish(this.topicCommand,jsonCommand);
     callback(null);  
 	}

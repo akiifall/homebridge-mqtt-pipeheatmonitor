@@ -1,3 +1,3 @@
-- personal use only. sorry :)
+- Water Pipe Heater Monitor Accessory with Local MQTT Server
 
-- WaterValve Accessory but just use pipe heater monitoring.
+- Not a WaterValve Accessory
