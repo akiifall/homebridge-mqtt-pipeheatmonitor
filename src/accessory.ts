@@ -60,7 +60,7 @@ class PipeHeaterMonitor implements AccessoryPlugin {
     this.mqttPass = config.mqttPass;
     this.topicStatus = config.topicStatus;
     this.topicCommand = config.topicCommand;
-    this.statusCommand = config.getStatusCommand;
+    this.statusCommand = config.statusCommand;
     this.onValue = config.onValue;
     this.offValue = config.offValue;
     
